@@ -1,0 +1,104 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HIBII</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="title">HIBII</h1>
+            <p class="subtitle">Transform your imagination into stunning visuals with real AI image generation</p>
+        </div>
+        
+        <div class="generator-section">
+            <div class="input-panel">
+                <div class="prompt-container">
+                    <label for="prompt" class="prompt-label">Describe your image</label>
+                    <textarea 
+                        id="prompt" 
+                        class="prompt-input" 
+                        placeholder="A majestic mountain landscape at sunset with purple clouds..."
+                        rows="3"
+                    ></textarea>
+                </div>
+                
+                <div class="controls">
+                    <div class="control-group">
+                        <label for="style" class="control-label">Style</label>
+                        <select id="style" class="control-select">
+                            <option value="photorealistic">Photorealistic</option>
+                            <option value="cinematic">Cinematic</option>
+                            <option value="fantasy-art">Fantasy Art</option>
+                            <option value="anime">Anime</option>
+                            <option value="pixel-art">Pixel Art</option>
+                            <option value="line-art">Line Art</option>
+                            <option value="low-poly">Low Poly</option>
+                        </select>
+                    </div>
+
+                    <div class="control-group">
+                        <label for="aspect" class="control-label">Aspect Ratio</label>
+                        <select id="aspect" class="control-select">
+                            <option value="1:1">Square (1:1)</option>
+                            <option value="16:9">Landscape (16:9)</option>
+                            <option value="9:16">Portrait (9:16)</option>
+                            <option value="3:2">Photo (3:2)</option>
+                            <option value="4:5">Social (4:5)</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <label class="checkbox-label" style="justify-content: flex-start; margin-bottom: 2rem;">
+                    <input type="checkbox" id="transparent" class="checkbox">
+                    <span class="checkmark"></span>
+                    Transparent Background
+                </label>
+                
+                <button id="generateBtn" class="generate-btn">
+                    <span class="btn-text">Generate Image</span>
+                    <div class="btn-loading">
+                        <div class="spinner"></div>
+                        Generating...
+                    </div>
+                </button>
+                <button id="variationsBtn" class="variations-btn" style="display: none;">
+                    <span>Generate Variation</span>
+                </button>
+            </div>
+            
+            <div class="output-panel">
+                <div id="placeholderArea" class="placeholder-area">
+                    <div class="placeholder-content">
+                        <div class="ai-icon">🤖</div>
+                        <h3>Your AI-generated image will appear here</h3>
+                        <p>Enter a prompt and click generate to create stunning visuals</p>
+                    </div>
+                </div>
+                
+                <div id="imageArea" class="image-area" style="display: none;">
+                    <img id="generatedImage" class="generated-image" alt="AI generated image">
+                    <div class="image-actions">
+                        <button id="downloadBtn" class="action-btn">
+                            Download
+                        </button>
+                        <button id="regenerateBtn" class="action-btn secondary">
+                            Regenerate
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="gallery-section">
+            <h2 class="gallery-title">Recent Creations</h2>
+            <div id="gallery" class="gallery">
+                <!-- Generated images will appear here -->
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js" type="module"></script>
+</body>
+</html>
